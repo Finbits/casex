@@ -5,7 +5,7 @@ defmodule Casex.MixProject do
     [
       app: :casex,
       version: "0.1.0",
-      elixir: "~> 1.6",
+      elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "Simple case conversion for web applications",
