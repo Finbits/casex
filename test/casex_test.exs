@@ -6,6 +6,16 @@ defmodule CasexTest do
     defstruct [:key]
   end
 
+  test "README install version check" do
+    app = :casex
+
+    app_version = "#{Application.spec(app, :vsn)}"
+    readme = File.read!("README.md")
+    [_, readme_versions] = Regex.run(~r/{:#{app}, "(.+)"}/, readme)
+
+    assert Version.match?(app_version, readme_versions)
+  end
+
   describe "to_camel_case/1" do
     test "struct" do
       my_struct = %MyStruct{key: "value"}
