@@ -34,16 +34,15 @@ defmodule Casex.MixProject do
 
   defp package do
     [
-      maintainers: ["Thiago Santos"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/thiamsantos/casex"}
+      links: %{"GitHub" => "https://github.com/brainn-co/casex"}
     ]
   end
 
   defp docs do
     [
       main: "Casex",
-      source_url: "https://github.com/thiamsantos/casex"
+      source_url: "https://github.com/brainn-co/casex"
     ]
   end
 end
