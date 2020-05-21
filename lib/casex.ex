@@ -33,6 +33,8 @@ defmodule Casex do
   Now all outcoming json response bodies will be converted to camel case.
   """
 
+  alias Casex.Serializable
+
   @doc """
   Converts all keys of a map to snake case.
   If the map is a struct with no `Enumerable` implementation the value is returned without convertion.
@@ -119,6 +121,7 @@ defmodule Casex do
   @spec to_camel_case(data :: term()) :: term()
   def to_camel_case(data) when is_map(data) do
     data
+    |> Serializable.serialize()
     |> Enum.map(fn {key, value} -> {camel_case(key), to_camel_case(value)} end)
     |> Enum.into(%{})
   rescue
@@ -129,7 +132,7 @@ defmodule Casex do
     Enum.map(data, &to_camel_case/1)
   end
 
-  def to_camel_case(data), do: data
+  def to_camel_case(data), do: Serializable.serialize(data)
 
   defp camel_case(value) when is_atom(value) do
     value
