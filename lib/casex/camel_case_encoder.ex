@@ -12,6 +12,13 @@ defmodule Casex.CamelCaseEncoder do
   ```
 
   Now all outcoming json response bodies will be converted to camel case.
+
+  ## Structs
+
+  If you want to control how the keys will be serilized before been encoded by `Jason`,
+  you can provide a implementation for the `Casex.Serializable` protocol, by default it
+  will return the structs as they come, without any transformation.
+
   """
 
   @spec encode_to_iodata!(data :: term()) :: iodata() | no_return()
