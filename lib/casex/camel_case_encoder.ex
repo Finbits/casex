@@ -15,7 +15,7 @@ defmodule Casex.CamelCaseEncoder do
 
   ## Structs
 
-  If you want to control how the keys will be serilized before been encoded by `Jason`,
+  If you want to control how the keys will be serilized before being encoded by `Jason`,
   you can provide a implementation for the `Casex.Serializable` protocol, by default it
   will return the structs as they come, without any transformation.
 
