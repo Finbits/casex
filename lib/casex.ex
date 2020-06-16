@@ -120,10 +120,21 @@ defmodule Casex do
   """
   @spec to_camel_case(data :: term()) :: term()
   def to_camel_case(data) when is_map(data) do
-    data
-    |> Serializable.serialize()
-    |> Enum.map(fn {key, value} -> {camel_case(key), to_camel_case(value)} end)
-    |> Enum.into(%{})
+    result = Serializable.serialize(data)
+
+    case result do
+      {map, dict} ->
+        map
+        |> Enum.map(fn {key, value} ->
+          {Map.get_lazy(dict, key, fn -> camel_case(key) end), to_camel_case(value)}
+        end)
+        |> Enum.into(%{})
+
+      map ->
+        map
+        |> Enum.map(fn {key, value} -> {camel_case(key), to_camel_case(value)} end)
+        |> Enum.into(%{})
+    end
   rescue
     Protocol.UndefinedError -> data
   end
