@@ -1,6 +1,6 @@
 # Casex
 
-![CI](https://github.com/brainn-co/casex/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/brainnco/casex/workflows/CI/badge.svg?branch=master)
 
 Simple case conversion for web applications.
 Easily decodes `camelCase` body payloads to `snake_case` and
