@@ -19,7 +19,7 @@ by adding `casex` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:casex, "~> 0.4.0"}
+    {:casex, "~> 0.4.1"}
   ]
 end
 ```
