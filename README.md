@@ -1,6 +1,6 @@
 # Casex
 
-![CI](https://github.com/brainnco/casex/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/Finbits/casex/workflows/CI/badge.svg?branch=master)
 
 Simple case conversion for web applications.
 Easily decodes `camelCase` body payloads to `snake_case` and
@@ -30,7 +30,7 @@ The complete docs can be found at [https://hexdocs.pm/casex](https://hexdocs.pm/
 
 ## License
 
-Copyright 2020 brainn.co.
+Copyright 2020 Finbits.
 
 Casex source code is released under Apache 2 License.
 
