@@ -15,10 +15,10 @@ jobs:
             otp: "21.3.8.14"
           - elixir: "1.7.4"
             otp: "20.3.8.26"
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-elixir@v1.0.0
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{ matrix.otp }}
           elixir-version: ${{ matrix.elixir }}
@@ -28,10 +28,10 @@ jobs:
         run: mix test
   mix_format:
     name: mix format (Elixir 1.9.4 OTP 22.3)
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-elixir@v1.0.0
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
         with:
           otp-version: "22.3"
           elixir-version: "1.9.4"
